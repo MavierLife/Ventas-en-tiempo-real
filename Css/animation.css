@@ -1,0 +1,127 @@
+/* Css/animation.css */
+
+/* From Uiverse.io by SchawnnahJ - Esta es tu animación original .loader */
+.loader {
+  position: relative; /* Ajustado para que funcione bien dentro de #globalLoadingOverlay */
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+  /* Las propiedades top/left absolutas no son necesarias si #globalLoadingOverlay lo centra */
+}
+
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  animation: before8 2s infinite;
+}
+
+.loader:after {
+  animation: after6 2s infinite;
+}
+
+@keyframes before8 {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+}
+
+@keyframes after6 {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+}
+
+/* NUEVA ANIMACIÓN - From Uiverse.io by satyamchaudharydev */
+/* Hecho un poco más pequeño y ajustado el nombre de la clase para evitar conflictos */
+.details-loading-animation { /* Cambiado de .loading a .details-loading-animation */
+  --speed-of-animation: 0.9s;
+  --gap: 4px; /* Reducido gap */
+  --first-color: #4c86f9;
+  --second-color: #49a84c;
+  --third-color: #f6bb02;
+  --fourth-color: #f6bb02; /* Originalmente era #e45a84, ajustado para que coincida con tu CSS */
+  --fifth-color: #2196f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Reducido width */
+  gap: var(--gap);
+  height: 50px; /* Reducido height */
+  /* filter: blur(1px) contrast(10); /* Opcional: si quieres un efecto visual diferente */
+}
+
+.details-loading-animation span {
+  width: 4px; /* Mantenido */
+  height: 35px; /* Reducido height de span para que quepa en el height del contenedor */
+  background: var(--first-color);
+  animation: scaleDetails var(--speed-of-animation) ease-in-out infinite; /* Cambiado nombre de animación */
+}
+
+.details-loading-animation span:nth-child(2) {
+  background: var(--second-color);
+  animation-delay: -0.8s;
+}
+
+.details-loading-animation span:nth-child(3) {
+  background: var(--third-color);
+  animation-delay: -0.7s;
+}
+
+.details-loading-animation span:nth-child(4) {
+  background: var(--fourth-color);
+  animation-delay: -0.6s;
+}
+
+.details-loading-animation span:nth-child(5) {
+  background: var(--fifth-color);
+  animation-delay: -0.5s;
+}
+
+@keyframes scaleDetails { /* Cambiado nombre de animación */
+  0%, 40%, 100% {
+    transform: scaleY(0.1); /* Ajustado scaleY para que sea más visible en estado "pequeño" */
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,163 @@
+/* ----------------------------------------------------
+   Sidebar en modo mini - ESTABLE y con apariencia correcta
+---------------------------------------------------- */
+body.sidebar-collapse .main-sidebar {
+    margin-left: 0 !important;
+    width: 60px !important;
+    overflow-x: hidden !important;
+    transition: none !important;
+    animation: none !important;
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    z-index: 1038;
+    background-color: #343a40 !important;
+}
+
+/* Ocultar elementos innecesarios */
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link p,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link .right,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link .fa-angle-left,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-treeview,
+body.sidebar-collapse .main-sidebar .user-panel .info,
+body.sidebar-collapse .main-sidebar .brand-text {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Estilos para el contenedor del enlace */
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link {
+    padding: 0.75rem 0 !important;
+    width: 60px !important;
+    min-height: 44px !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Estilos específicos para los íconos */
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link .nav-icon {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    font-size: 1.1rem !important;
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #c2c7d0 !important;
+    z-index: 2 !important;
+}
+
+/* Estados hover y activo */
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link:hover .nav-icon,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link.active .nav-icon {
+    color: #ffffff !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link.active {
+    background-color: #007bff !important;
+}
+
+/* Estilos para el brand-link en modo colapsado */
+body.sidebar-collapse .brand-link {
+    padding: 0.8rem 0 !important;
+    width: 60px !important;
+    height: 3.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ajustes para la imagen del logo en modo colapsado */
+body.sidebar-collapse .brand-link .brand-image {
+    float: none !important;
+    max-height: 33px !important;
+    width: auto !important;
+    margin: 0 !important;
+    position: relative !important;
+    display: block !important;
+    opacity: 0.8 !important;
+}
+
+/* Ocultar completamente el texto del brand en modo colapsado */
+body.sidebar-collapse .brand-link .brand-text {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+}
+
+/* Estilos generales del sidebar (cuando está expandido) */
+body:not(.sidebar-collapse) .main-sidebar {
+    background-color: #343a40 !important;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .nav-sidebar .nav-link p,
+body:not(.sidebar-collapse) .main-sidebar .brand-text,
+body:not(.sidebar-collapse) .main-sidebar .user-panel .info {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin-left: 0.5rem;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .nav-sidebar .nav-link .nav-icon {
+    margin-right: .2rem !important;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .nav-sidebar .nav-link {
+    justify-content: flex-start !important;
+    padding: 0.5rem 1rem !important;
+    color: #c2c7d0 !important;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .nav-sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .nav-sidebar .nav-link.active {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+}
+
+body:not(.sidebar-collapse) .brand-link {
+    justify-content: flex-start !important;
+    padding: 0.8rem 1rem !important;
+    height: 3.5rem;
+    color: #c2c7d0 !important;
+}
+
+body:not(.sidebar-collapse) .brand-link:hover {
+    color: #ffffff !important;
+}
+
+/* Asegurar que los íconos del sidebar mantengan el color correcto en hover */
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link:hover,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link:hover *,
+body.sidebar-collapse .main-sidebar .nav-sidebar .nav-link:hover i.nav-icon:before {
+    color: #ffffff !important;
+}
